@@ -4,18 +4,33 @@ Simple Linux management utilities for VPS and networking systems.
 
 ---
 
-## Features
+# Features
 
-### Socks Management System
-Manage SOCKS proxy configurations easily through an interactive shell menu.
+## Root Login System
 
-### DNS Management System
-Manage DNS profiles with automatic resolver detection support:
+Enable root login access safely through an automated shell script.
+
+Included features:
+- Root user detection
+- Sudo permission checking
+- Root password setup
+- SSH root login configuration
+- Password authentication enablement
+- SSH service restart
+- Automatic SSH configuration backup
+
+---
+
+## DNS Management System
+
+Manage DNS profiles with automatic resolver detection support.
+
+Supported resolver systems:
 - systemd-resolved
 - resolvconf
 - static `/etc/resolv.conf`
 
-Includes:
+Included features:
 - ControlD Ads Blocking DNS
 - Default DNS
 - Custom DNS Setup
@@ -25,12 +40,24 @@ Includes:
 
 ---
 
-# Installation
-
 ## Socks Management System
 
+Manage SOCKS proxy configurations easily through an interactive shell menu.
+
+Included features:
+- SOCKS configuration management
+- Interactive shell interface
+- VPS networking utilities
+- Simple deployment system
+
+---
+
+# Installation
+
+## Root Login System
+
 ```bash
-wget -O msocks https://raw.githubusercontent.com/rewasu91/mixfile/refs/heads/main/msocks.sh && chmod +x msocks && ./msocks
+wget -O mroot https://raw.githubusercontent.com/rewasu91/Management-System/refs/heads/main/mroot.sh && chmod +x mroot && ./mroot
 ```
 
 ---
@@ -38,7 +65,15 @@ wget -O msocks https://raw.githubusercontent.com/rewasu91/mixfile/refs/heads/mai
 ## DNS Management System
 
 ```bash
-wget -O mdns https://raw.githubusercontent.com/rewasu91/mixfile/refs/heads/main/mdns.sh && chmod +x mdns && ./mdns
+wget -O mdns https://raw.githubusercontent.com/rewasu91/Management-System/refs/heads/main/mdns.sh && chmod +x mdns && ./mdns
+```
+
+---
+
+## Socks Management System
+
+```bash
+wget -O msocks https://raw.githubusercontent.com/rewasu91/Management-System/refs/heads/main/msocks.sh && chmod +x msocks && ./msocks
 ```
 
 ---
@@ -85,15 +120,17 @@ Recommended for:
 - systemd-resolved
 - resolvconf
 - static resolver systems
+- OpenSSH server environments
 
 ---
 
 # Notes
 
-- Run scripts as root.
-- Scripts automatically detect resolver type.
+- Run scripts as root or with sudo permission.
+- Scripts automatically detect resolver type where applicable.
 - Existing DNS configurations are backed up automatically.
 - DNS cache is flushed automatically after applying changes.
+- Root Login System automatically backs up SSH configuration before making changes.
 
 ---
 
